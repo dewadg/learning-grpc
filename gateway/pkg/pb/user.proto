@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = ".;pb";
+
+package user_service;
+
+service UserService {
+  rpc FindUser(FindUserInput) returns (User) {}
+}
+
+message User {
+  uint32 id = 1;
+  string username = 2;
+  string email = 3;
+}
+
+message FindUserInput {
+  uint32 id = 1;
+}
